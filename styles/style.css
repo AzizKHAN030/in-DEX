@@ -1,0 +1,63 @@
+.logo{
+    height: 50px;
+}
+.navbar{
+    background: blue;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+}
+header .container-fluid{
+    padding: 0;
+
+}
+header{
+    position: relative;
+    top: 84px;
+}
+.carousel-item{
+    background: rgb(0,0,0);
+    height: 35rem;
+}
+
+.carousel-caption{
+    z-index: 3;
+}
+.carousel-caption{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+.carousel-control-prev, .carousel-control-next{
+    z-index: 2;
+}
+.carousel-item-image{
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-position: center;
+    background-size: cover;
+    opacity:0.5;
+}
+
+
+
+
+
+
+@media screen and (max-width: 1130px){
+    .carousel-item{
+        height: 25rem;
+    }
+}
+@media screen and (max-width: 680px){
+    .carousel-item{
+        height: 15rem;
+    }
+}
