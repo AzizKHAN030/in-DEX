@@ -2,19 +2,33 @@
     height: 50px;
 }
 .navbar{
-    background: blue;
+    background: #fafafa;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 5;
+    padding:10px 0;
+}
+.menu li{
+    font-size: 1.25rem;
+    margin: 0 5px;
+}
+.menu li a{
+    color: rgb(90, 90, 90);
+    padding: 5px 15px;
+    border-radius: 8px;
+    transition: .3s ease;
+}
+.menu li a:hover{
+    background:#8819ab;
+    color: #fff;
 }
 header .container-fluid{
     padding: 0;
-
 }
 header{
     position: relative;
-    top: 84px;
+    top: 50px;
 }
 .carousel-item{
     background: rgb(0,0,0);
@@ -22,16 +36,20 @@ header{
 }
 
 .carousel-caption{
-    z-index: 3;
-}
-.carousel-caption{
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
     z-index: 1;
+    flex-direction: column;
+    justify-content: center;
+
 }
+.carousel-caption h5{
+    font-size: 60px;
+}
+
 .carousel-control-prev, .carousel-control-next{
     z-index: 2;
 }
@@ -45,7 +63,14 @@ header{
     background-size: cover;
     opacity:0.5;
 }
-
+.carousel-control-prev:hover, .carousel-control-prev:focus,
+.carousel-control-next:hover,
+.carousel-control-next:focus {
+  color: red;
+  text-decoration: none;
+  outline: 0;
+  opacity: 1;
+}
 
 
 
