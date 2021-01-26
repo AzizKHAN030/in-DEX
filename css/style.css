@@ -55,12 +55,10 @@ a.scrolled-nav-link:hover{
 }
 /* BURGER MENU CHANGE COLOR */
 .custom-toggler .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,102,203, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
   }
-  
   .custom-toggler.navbar-toggler {
     border-color:#fff;
-  
   } 
   .custom-toggler .icon{
     stroke: #fff;
@@ -103,7 +101,7 @@ a.scrolled-nav-link:hover{
 .advantages-item{
     margin-bottom: 2rem;
 }
-.advantages-item .fa{
+.advantages-item .fa,.services__icon .fa{
     font-size: 5rem;
     transition: .3s ease;
     color: rgb(68, 68, 68);
@@ -111,7 +109,7 @@ a.scrolled-nav-link:hover{
 .card{
     border:1px solid #8819ab
 }
-.advantages .row{
+.advantages .row, .posts__title, .services__title{
     min-height: 50px;
 }
 .row h2{
@@ -128,10 +126,9 @@ a.scrolled-nav-link:hover{
 /* POSTS */
 .posts{
     background:rgb(245, 248, 250);
+    padding-bottom: 25px;
 }
-.posts__title{
-    min-height: 50px;
-}
+
 .posts__img img{
     width: 100%;
     transform: scale(1.2);
@@ -155,7 +152,7 @@ a.scrolled-nav-link:hover{
 .posts-item:hover .img-cover{
     background:rgba(0, 0, 0, 0);
 }
-.posts:hover .posts__title{
+section:hover .posts__title{
     font-size: 2.5rem;
     color: #8819ab;
 }
@@ -165,8 +162,43 @@ a.scrolled-nav-link:hover{
 .posts__text h3{
     margin-bottom: 25px;
 }
-
-
+/* SERVICES */
+.servises__desc{
+    margin: 15px 0;
+}
+.services__more{
+    color:#8819ab;
+}
+.services-item{
+    margin-bottom: 45px;
+}
+section:hover .services__title{
+    font-size: 2.5rem;
+    color: #8819ab;
+}
+.services__name{
+    color: inherit;
+}
+.services__name:hover{
+    color: inherit;
+}
+.services-item:hover .fa{
+    color: #8819ab;
+    transform: scale(1.05);
+}
+.services__more::before{
+    content:"";
+    position: absolute;
+    bottom: -5px;
+    display: inline-block;
+    height: 1px;
+    background:#8819ab;
+    width: 0%;
+    transition: .3s ease;
+}
+.services-item:hover .services__more::before{
+    width: 100px;
+}
 
 @media screen and (max-width:990px){
     .posts__img .img-cover{
