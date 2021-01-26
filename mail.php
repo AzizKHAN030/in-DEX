@@ -1,32 +1,28 @@
 <?php
-$login=$_POST["login"];
-$email=$_POST["email"];
-$telephone=$_POST["telephone"];
+$name=$_POST["user_name"];
+$email=$_POST["user_email"];
+$phone=$_POST["user_phone"];
 
-$login=htmlspecialchars($login);
-$email=htmlspecialchars($email);
-$telephone=htmlspecialchars($telephone);
 
-$login=urldecode($login);
-$email=urldecode($email);
-$telephone=urldecode($telephone);
+$token="1672323034:AAG_vIJPvhEglh97xVq8Hos80KVOmbjZZhI";
+$chat_id="-500038362";
 
-$login=trim($login);
-$email=trim($email);
-$telephone=trim($telephone);
 
-if(mail("rasulov_azizbek@inbox.ru",
-        "Новое письмо с сайтаж",
-        "Логин: ".$login."\n".
-        "Email: ".$email."\n".
-        "Телефон: ".$telephone,
-        "From: no-reply@mydomain.ru \r\n")
-        )
-        {
-            echo("Письмо успешно отправлено!");
-        }
-        else {
-            echo("Произошла ошибка, проверьте позже");
-    };
+$arr=array(
+    "Имя пользователя"=>$name,
+    "Email пользователя"=>$email,
+    "Номер телефона пользователя"=>$phone
+);
+foreach($arr as $key=>$value){
+    $txt .="<b>".$key."</b>".$value."%0A";
+};
+
+ $sendToTelegram=fopen("https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_id}&parse_mode=html&text={$txt}","r");
+ 
+ if($sendToTelegram){
+     echo"Thank you";
+ }else{
+     echo "Error";
+ }
 
 ?>
