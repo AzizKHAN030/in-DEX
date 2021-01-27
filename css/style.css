@@ -24,6 +24,9 @@ a,
 a:hover {
     text-decoration: none;
 }
+body{
+    overflow-x: hidden;
+}
 .navbar{
     transition: .5s ease;
 }
@@ -128,6 +131,7 @@ a.scrolled-nav-link:hover{
 .posts{
     background:rgb(245, 248, 250);
     padding-bottom: 25px;
+    overflow: hidden;
 }
 
 .posts__img img{
@@ -201,14 +205,114 @@ section:hover .services__title{
     width: 100px;
 }
 
+
+/* contacts */
+.connect a{
+    color: rgb(68, 68, 68);
+    font-weight: 700;
+}
+.connect a .fa{
+    font-size: 2rem;
+    margin-right: 10px;
+    position: relative;
+    transform: translateY(15%);
+    transition: .3s ease;
+}
+.connect-item{
+    position: relative;
+}
+.connect-item:hover .fa{
+    color: #8819ab;
+}
+.connect-item .line{
+position: absolute;
+bottom: -10px;
+height: 1px;
+background:#8819ab;
+width: 0%;
+transition: .3s ease;
+}
+.connect-item.phone .line{
+   right: 0;
+}
+
+
+.connect-item:hover .line{
+    width: 70%;
+}
+
+
+
+
+/* feedback */
+.contacts{
+    background:rgb(245, 248, 250);
+}
+.contacts img{
+    transition: 1.5s;
+}
+.contacts:hover img{
+    transform: scale(1.08);
+}
+
+.call-center-operator img{
+    border-radius:50%;
+    width: 100%;
+}
+.form-group input:focus{
+    border-color: #8819ab;
+    box-shadow:0 0 0 .2rem rgba(159,18,176,0.5);
+}
+.form-group label{
+    font-size: 1.5rem;
+}
+.operator_image{
+      overflow: hidden;
+      border-radius:50%;
+      width: 100%;
+}
+.btn{
+    background-color:#8819ab;
+    border-color:#8819ab;
+    color: #fff;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 1rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    transition: .3s ease;
+    margin: 0 auto;
+    width: 100%;
+}
+.btn:hover{
+    background-color:#6d1388;
+    border-color:#6d1388;
+    color: #fff;
+}
+.btn:focus{
+    border-color: #8819ab;
+    box-shadow:0 0 0 .2rem rgba(159,18,176,0.5);
+}
+
+
+
 @media screen and (max-width:990px){
     .posts__img .img-cover{
         background: rgba(0,0,0,0);
+        display:none;
     }
 }
 
 @media screen and (max-width:838px){
     .carousel-item{
         height: 300px;
+    }
+}
+@media screen and (max-width:755px){
+    
+    .form-group label{
+        font-size: 1.2rem;
     }
 }
