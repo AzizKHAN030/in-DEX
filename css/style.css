@@ -102,10 +102,10 @@ a.scrolled-nav-link:hover{
     font-size: 2.5rem;
 }
 
-.advantages-item{
+.about-item{
     margin-bottom: 2rem;
 }
-.advantages-item .fa,.services__icon .fa{
+.about-item .fa,.services__icon .fa{
     font-size: 5rem;
     transition: .3s ease;
     color: rgb(68, 68, 68);
@@ -113,18 +113,18 @@ a.scrolled-nav-link:hover{
 .card{
     border:1px solid #8819ab
 }
-.advantages .row, .posts__title, .services__title{
+.about .row, .posts__title, .services__title{
     min-height: 50px;
 }
 .row h2{
     transition: .3s ease;
     color: rgb(68, 68, 68);
 }
-.advantages:hover h2{
+.about:hover h2{
     color: #8819ab;
     font-size: 2.5rem;
 }
-.advantages:hover .advantages-item .fa{
+.about:hover .about-item .fa{
     color: #8819ab;
 }
 /* POSTS */
@@ -201,6 +201,13 @@ section:hover .services__title{
     width: 0%;
     transition: .3s ease;
 }
+.services__more .fa{
+    position: relative;
+    bottom: -2px;
+}
+.services__more:hover{
+    color: #8819ab !important;
+}
 .services-item:hover .services__more::before{
     width: 100px;
 }
@@ -210,36 +217,32 @@ section:hover .services__title{
 .connect a{
     color: rgb(68, 68, 68);
     font-weight: 700;
+    display: inline-block;
+    position: relative;
 }
 .connect a .fa{
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-right: 10px;
     position: relative;
-    transform: translateY(15%);
+   bottom: -5px;
     transition: .3s ease;
-}
-.connect-item{
-    position: relative;
 }
 .connect-item:hover .fa{
     color: #8819ab;
 }
-.connect-item .line{
-position: absolute;
-bottom: -10px;
-height: 1px;
-background:#8819ab;
-width: 0%;
-transition: .3s ease;
+.connect-item a::before{
+    content:"";
+    position: absolute;
+    height: 2px;
+    background:#8819ab;
+    width: 0%;
+    transition: .3s ease;
+    bottom: -5px;
 }
-.connect-item.phone .line{
-   right: 0;
+.connect-item:hover a::before{
+    width: 100%;
 }
 
-
-.connect-item:hover .line{
-    width: 70%;
-}
 
 
 
@@ -296,6 +299,12 @@ transition: .3s ease;
     box-shadow:0 0 0 .2rem rgba(159,18,176,0.5);
 }
 
+/* FOOTER */
+
+footer{
+    background:#8819ab;
+    padding: 30px 0;
+}
 
 
 @media screen and (max-width:990px){
@@ -314,5 +323,11 @@ transition: .3s ease;
     
     .form-group label{
         font-size: 1.2rem;
+    }
+}
+@media screen and (max-width:400px){
+    .connect .class{
+        max-width: 395px;
+        text-align: center;
     }
 }
