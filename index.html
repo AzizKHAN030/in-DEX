@@ -296,14 +296,14 @@
       <div
         class="row h-100 align-items-center justify-content-center justify-content-md-between justify-content-lg-center">
         <div class="col-10 col-md-6 col-lg-5">
-          <form action="telegram.php" method="POST" class="">
+          <form action="telegram.php" method="POST" name="contactForm" onsubmit="return validate()">
             <div class="form-group">
               <label for="exampleInputName">Введите Ваше имя:</label>
-              <input type="text" name="user_name" class="form-control" id="exampleInputName" autocomplete="off">
+              <input type="text" name="user_name" class="form-control" id="exampleInputName" autocomplete="off" placeholder="Андрей">
             </div>
             <div class="form-group">
               <label for="exampleInputNuber">Введите Ваш номер телефона:</label>
-              <input type="tel" name="user_phone" class="form-control" id="exampleInputNuber" autocomplete="off">
+              <input type="tel" name="user_phone" class="form-control" id="exampleInputNuber" autocomplete="off" placeholder="998*********">
             </div>
             <button type="submit" class="btn">Отправить</button>
           </form>

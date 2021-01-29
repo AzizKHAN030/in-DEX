@@ -27,3 +27,19 @@ $(document).ready(function(){
         $('body,html').animate({scrollTop: top-65}, 1000);
     });
 });
+function validate() {
+    let name=document.forms["contactForm"]["user_name"].value;
+    if (name==""){
+        alert("Укажите Ваше имя");
+        return false;
+    }
+    if(name.length>25 || /\d/.test(name)){
+        alert("Проверьте правописание имени");
+        return false;
+    }
+    let phoneNum=document.forms["contactForm"]["user_phone"].value; 
+    if(phoneNum=="" || phoneNum.lenght>12 || phoneNum.length<9 || /\D/.test(phoneNum)){
+        alert("Введите правильный формат номера!");
+        return false;
+    }
+}
