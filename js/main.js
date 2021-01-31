@@ -49,7 +49,10 @@ function validate() {
        $(".user-name").addClass("is-invalid");
        $(".user-name_error").addClass("error");
         return false;
-    }
+    } else{
+        $(".user-name").addClass("is-valid");
+        $(".user-name_error").addClass("success");};
+        
     for (let i=0; i<name.length;i++){
      if(isCharacterALetter(name[i])){
          c++;
@@ -72,11 +75,17 @@ function validate() {
      $(".user-name").addClass("is-invalid");
      $(".user-name_error").addClass("error");
         return false;
+    }else{
+        $(".user-name").addClass("is-valid");
+        $(".user-name_error").addClass("success");
     }
     let phoneNum=document.forms["contactForm"]["user_phone"].value; 
     if(phoneNum=="" || phoneNum==" " || phoneNum.lenght>12 || phoneNum.length<9 || /\D/.test(phoneNum)){
         $(".user-phone").addClass("is-invalid");
         $(".user-phone_error").addClass("error");
         return false;
+    } else{
+        $(".user-phone").addClass("is-valid");
+        $(".user-phone_error").addClass("success");
     }
 }
