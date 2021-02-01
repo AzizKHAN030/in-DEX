@@ -41,7 +41,7 @@ $(function(){
 
 //form validation
 function isCharacterALetter(char) {
-    return (/[a-zA-Zа-яёА-яЁ]/).test(char)
+    return (/[a-zA-Zа-яёА-яЁ]/).test(char);
   }
 function validate() {
     let name=document.forms["contactForm"]["user_name"].value;
@@ -52,7 +52,7 @@ function validate() {
         return false;
     } else{
         $(".user-name").addClass("is-valid");
-        $(".user-name_error").addClass("success");};
+        $(".user-name_error").addClass("success");}
         
     for (let i=0; i<name.length;i++){
      if(isCharacterALetter(name[i])){
