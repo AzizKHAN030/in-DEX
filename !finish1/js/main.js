@@ -1,3 +1,4 @@
+//navbar animation
 $(window).on("scroll", function () {
     $(".navbar").toggleClass("scrolled", $(this).scrollTop() > $(window).height()*0.5);
 });
@@ -19,6 +20,7 @@ $(window).on("scroll", function () {
     $(".navbar-toggler").toggleClass("custom-toggler", $(this).scrollTop() > $(window).height()*0.5);
 });
 
+//navbar anchor links
 $(document).ready(function(){
     $("#navLinks").on("click","a", function (event) {
         event.preventDefault();
@@ -27,6 +29,16 @@ $(document).ready(function(){
         $('body,html').animate({scrollTop: top-65}, 1000);
     });
 });
+
+$(function(){ 
+    var navMain = $(".navbar-collapse");
+    navMain.on("click", "a:not([data-toggle])", null, function () {
+        navMain.collapse('hide');
+    });
+});
+
+
+//form validation
 function isCharacterALetter(char) {
     return (/[a-zA-Zа-яёА-яЁ]/).test(char)
   }
@@ -34,9 +46,13 @@ function validate() {
     let name=document.forms["contactForm"]["user_name"].value;
     let b=0, c=0;
     if (name==""){
-        alert("Введите Ваше имя");
+       $(".user-name").addClass("is-invalid");
+       $(".user-name_error").addClass("error");
         return false;
-    }
+    } else{
+        $(".user-name").addClass("is-valid");
+        $(".user-name_error").addClass("success");};
+        
     for (let i=0; i<name.length;i++){
      if(isCharacterALetter(name[i])){
          c++;
@@ -46,20 +62,30 @@ function validate() {
      }
  }
     if(c+b!=name.length){
-        alert("Имя не должно содержать символы");
+       $(".user-name").addClass("is-invalid");
+       $(".user-name_error").addClass("error");
         return false;
     }
     else if(b>=1 && c==0){
-        alert("Введите Ваше имя");
+      $(".user-name").addClass("is-invalid");
+      $(".user-name_error").addClass("error");
         return false;
     }
     else if(c<=2){
-        alert("Проверьте имя");
+     $(".user-name").addClass("is-invalid");
+     $(".user-name_error").addClass("error");
         return false;
+    }else{
+        $(".user-name").addClass("is-valid");
+        $(".user-name_error").addClass("success");
     }
     let phoneNum=document.forms["contactForm"]["user_phone"].value; 
     if(phoneNum=="" || phoneNum==" " || phoneNum.lenght>12 || phoneNum.length<9 || /\D/.test(phoneNum)){
-        alert("Введите правильный формат номера");
+        $(".user-phone").addClass("is-invalid");
+        $(".user-phone_error").addClass("error");
         return false;
+    } else{
+        $(".user-phone").addClass("is-valid");
+        $(".user-phone_error").addClass("success");
     }
 }
