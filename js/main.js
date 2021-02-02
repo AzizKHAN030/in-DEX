@@ -90,3 +90,19 @@ function validate() {
         $(".user-phone_error").addClass("success");
     }
 }
+/* Change page */
+$(".services__icon,.services__name,.services__more").on("click",function () {
+    $("body").addClass("changePage");
+});
+function delay (URL) {
+    setTimeout( function() { window.location = URL }, 400 );
+}
+/* scripts for another page */
+$(".page.nav-link").on("click",function () {
+    $(".page").addClass("changePage");
+});
+
+function delay (URL) {
+    setTimeout( function() { window.location = URL }, 400 );
+}
+
