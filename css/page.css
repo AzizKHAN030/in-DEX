@@ -1,7 +1,0 @@
-.page.nav-link .fa{
-    display: inline-block;
-    transform: rotate(180deg) translateY(-1.5px);
-}
-.page.changePage{
-    transform: translateX(100%);
-}

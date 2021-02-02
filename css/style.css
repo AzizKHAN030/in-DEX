@@ -213,7 +213,7 @@ section:hover .services__title{
 }
 .changePage{
     transform: translateX(-100%);
-    transition: .8s ease;
+    transition: .5s ease;
 }
 
 /* contacts */
